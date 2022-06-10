@@ -1,0 +1,215 @@
+%comentário
+
+\documentclass[12pt]{article} %define o tipo de documento
+\usepackage[utf8]{inputenc} %compreender a acentuação feita direto de pelo teclado
+
+\usepackage[brazilian]{babel} %idioma
+\usepackage[a4paper,top=3cm,right=2cm,left=3cm,margin=2cm]{geometry}
+\usepackage{setspace} %espaçamento entre linhas
+\setstretch{1.5} %espaçamento entre linhas 
+\usepackage{graphicx} % permite colocar gráficos ou figuras no texto
+\usepackage{indentfirst} %criar paragrafo \indent \noindent
+\usepackage{float} %fixar as imagens nos locais em que foram colocadas 
+\usepackage{amsmath} %alinha as equações
+\usepackage{listings} %pacote para fazer listas
+\usepackage{xcolor}
+
+\title{LaTex nas Normas ABNT}
+\author{Caio Rubem Saboia}
+\date{June 2022}
+
+\begin{document}
+%CAPA%
+\thispagestyle{empty} %retira o numero da pagina
+\begin{center}
+    \begin{figure}[H]
+        \centering
+        \includegraphics[scale=0.2]{brasão.png}
+        
+        \label{fig:my_label}
+    \end{figure}
+UNIVERSIDADE FEDERAL DO CEARÁ \\
+CENTRO DE CIÊNCIAS \\
+DEPARTAMENTO DE ESTATÍSTICA E MATEMÁTICA APLICADA
+\vspace{2cm}
+
+Dr. Baleia \\
+
+\vspace{4cm}
+\textbf{OFICINA DE PATO} \\ %coloca em negrito
+
+\vspace{9cm}
+
+\textbf{FORTALEZA}\\
+\textbf{Junho 2022}
+\end{center}
+
+
+\newpage
+%SUMARIO%
+\begin{center}
+\tableofcontents %sumario
+
+\newpage
+\listoftables %lista de tabelas
+\listoffigures %lista de figuras
+\end{center}
+
+\newpage
+\section{Introdução}
+\indent\textcolor{red}{Dia a Dia do Dr. Baleia}\\
+\noindent Doutor só de apelido mesmo, grande demais para algo tão pequeno.\\
+
+\section{Estrutura do Texto}
+\subsection{Tamanho} %cria uma subseção
+{\singlespacing
+\noindent\tiny{letra super reduzida}
+\scriptsize{\textbf{letra bastante pequena}}\\
+\footnotesize{letra muito pequena}\\
+\small{letra pequena}\\
+\normalsize{letra normal}\\
+\large{letra grande}\\
+\Large{letra maior}\\
+\LARGE{letra muito grande}\\
+\huge{letra bastante grande}\\
+\Huge{letra super grande}\\
+}
+
+\subsection{Fontes}
+\noindent
+\textbf{Negrito}\\
+\textit{Itálico}\\
+\texttt{Máquina de escrever}\\
+
+\begin{center}
+    centralizado
+\end{center}
+
+\begin{flushleft}
+alinhamento à esquerda
+\end{flushleft}
+
+\begin{flushright}
+alinhamento à direita
+\end{flushright}
+
+\newpage
+
+\section{Tabelas}
+
+\begin{tabular}{c|c| c| c}
+\hline
+    1 & 2 & 3 & 4 \\
+    3 & 4 & 5 & 6 \\
+    \hline
+\end{tabular}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{c|c c c c c c}
+    \hline
+        Dias & Média & DP & CV(\%) & Minimo & Mediana & Máximo \\
+        \hline
+        1 & 4,5 & 2 & 45 & 0 & 4,4 & 9,1 \\
+        a & b & c & d & e & f & g \\
+        \hline
+    \end{tabular}
+    \caption{Medidas de Resumo}
+    \label{tabelareusmo}
+\end{table}
+
+De acordo com a Tabela \ref{tabelareusmo}
+
+\section{Ambientes Matemáticos}
+
+\indent Pode-se utilizar os ambientes matemáticos das seguintes formas:\\
+
+\(x^2 + 2 \) \\
+Olha essa expressão aqui oh: $ x + y = 45$. Essa mesma
+$$ y + z = 123$$
+
+\begin{math}
+x^3 + 2x^2 - 6x + 7 = 0 \\
+\end{math}
+
+\noindent Se liga na baskara do pai: $\dfrac{-b \pm \sqrt{b^2 -4ac}}{2a}$ \\
+
+\subsection{Símbolos Matemáticos}
+
+\noindent Raiz enésima: $\sqrt{25} \sqrt[3]{27}$\\
+Vetores: $f: A \longrightarrow B$\\
+$x_1,x_2,x_3,...,x_n$ \\
+Somatório: $\sum\limits_{i=1}^{n = 5} x_i$\\
+Integral: $\int_{-\infty}^{\infty}(x^2+2)dx$
+
+\subsection{Equações Numeradas e Não-enumeradas}
+\subsubsection{Equações Numeradas}
+
+\begin{equation}
+    \dfrac{x+y}{xy}
+\end{equation}
+
+\begin{equation}
+    \Bar{x} = \dfrac{\sum\limits_{i=1}^n x_1}{n}
+\end{equation}
+
+\begin{eqnarray}
+    y = 2x + 4\\
+    z = 3x - 2\\
+    w = 2z + 7
+\end{eqnarray}
+
+\subsubsection{Equações Não-enumeradas}
+
+\begin{eqnarray*}
+    y = 2x + 4 \\
+    z = 3x - 2 \\
+    w = 2z + 7
+\end{eqnarray*}
+
+\begin{align}
+    y &= 2x + 4\\
+    z &= 3x - 2\\
+    w &= \dfrac{2z + 3y -7p}{7z + 14j -32t}
+\end{align}
+
+\begin{align}
+    y = 2x + 4\\
+    z = 3x - 2\\
+    w = \dfrac{2z + 3y -7p}{7z + 14j -32t}
+\end{align}
+
+\section{Item}
+Usando o begin{itemize}
+\begin{itemize}
+    \item Tópico 1
+    \item tópico 2
+    \item tópico 3
+    \begin{itemize}
+        \item subtópico 3.1
+        \item subtópico 3.2
+        \begin{itemize}
+            \item subsubtópico 3.2.1
+            \item subsubtópico 3.2.2
+        \end{itemize}
+    \end{itemize}
+    
+\end{itemize}
+
+Usando o begin{enumerate}:
+\begin{enumerate}
+    \item Tópico 1
+    \item tópico 2
+    \item tópico 3
+    \begin{enumerate}
+        \item subtópico 3.1
+        \item subtópico 3.2
+        \begin{enumerate}
+            \item subsubtópico 3.2.1
+            \item subsubtópico 3.2.2
+        \end{enumerate}
+    \end{enumerate}
+    
+\end{enumerate}
+
+\end{document}
